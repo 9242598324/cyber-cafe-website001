@@ -1,0 +1,1084 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>R Cyber Cafe | Online Services</title>
+
+    <meta name="description"
+          content="R Cyber Cafe - Aadhaar, PAN Card, Voter Card, Ration Card, Government Scheme, Job Form Fill Up, Printing, Scanning and Online Services.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #071952;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(rgba(4,18,70,0.82), rgba(0,40,100,0.82)),
+                linear-gradient(135deg, #071952, #088395);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00d4ff;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #e8f8ff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 6px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #00b894;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #009b7d;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #071952;
+        }
+
+        .btn-secondary:hover {
+            background: #e9f7ff;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 75px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #071952;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: white;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 35px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #00a8cc;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            border-color: #00b894;
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: #e9fbf7;
+            font-size: 30px;
+        }
+
+        .service-card h3 {
+            color: #071952;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #f1f7ff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            color: #071952;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .feature {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* ================= NOTICE ================= */
+
+        .notice {
+            background: #071952;
+            color: white;
+        }
+
+        .notice-box {
+            background: white;
+            color: #222;
+            max-width: 900px;
+            margin: auto;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .notice-box h3 {
+            color: #071952;
+            margin-bottom: 15px;
+        }
+
+        .notice-box ul {
+            padding-left: 25px;
+        }
+
+        .notice-box li {
+            margin: 8px 0;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-card {
+            padding: 30px;
+            border-radius: 12px;
+            background: #f5f8ff;
+        }
+
+        .contact-card h3 {
+            color: #071952;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .contact-item strong {
+            color: #071952;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            border: none;
+            cursor: pointer;
+            padding: 13px 25px;
+            border-radius: 7px;
+            background: #00b894;
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-form button:hover {
+            background: #009b7d;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #06143f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px;
+            color: #d5e2ff;
+        }
+
+        /* ================= WHATSAPP ================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            z-index: 2000;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.08);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 850px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 68px;
+                width: 100%;
+                background: #071952;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 55px 15px;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2,
+            .about h2 {
+                font-size: 29px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            R <span>Seva</span>
+        </div>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to <span>R</span>
+            Cyber Cafe
+        </h1>
+
+        <p>
+            All Online & Digital Services Under One Roof
+        </p>
+
+        <p>
+            Aadhaar • PAN Card • Voter Card • Ration Card •
+            Government Schemes • Job Forms • Printing & More
+        </p>
+
+        <a href="#services" class="btn btn-primary">
+            View All Services
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Online Services</h2>
+            <p>We provide assistance with various online and digital services.</p>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="serviceSearch"
+                placeholder="🔍 Search service..."
+                onkeyup="searchServices()"
+            >
+        </div>
+
+
+        <div class="service-grid" id="serviceGrid">
+
+
+            <div class="service-card">
+                <div class="service-icon">🪪</div>
+                <h3>Aadhaar Services</h3>
+                <p>
+                    Aadhaar-related online assistance, updates and
+                    appointment support.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h3>PAN Card</h3>
+                <p>
+                    New PAN application, correction and
+                    online PAN-related services.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">🗳️</div>
+                <h3>Voter Card</h3>
+                <p>
+                    Voter registration, correction and
+                    other voter-related online assistance.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">🍚</div>
+                <h3>Ration Card</h3>
+                <p>
+                    Ration card application, correction and
+                    related online services.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">🏛️</div>
+                <h3>Government Schemes</h3>
+                <p>
+                    Assistance with eligible government
+                    scheme applications and online forms.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Job Form Fill Up</h3>
+                <p>
+                    Online government and private job
+                    application form filling assistance.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Scholarship Forms</h3>
+                <p>
+                    Online scholarship applications and
+                    document upload assistance.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>Certificate Services</h3>
+                <p>
+                    Assistance for eligible online certificate
+                    applications such as income, caste and residence.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">🛂</div>
+                <h3>Passport Services</h3>
+                <p>
+                    Passport application form filling and
+                    appointment assistance.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">🖨️</div>
+                <h3>Printing</h3>
+                <p>
+                    Black & white and color printing services.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">📑</div>
+                <h3>Scanning & Photocopy</h3>
+                <p>
+                    Document scanning, photocopy and
+                    digital document preparation.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">📸</div>
+                <h3>Photo & Documents</h3>
+                <p>
+                    Passport-size photo, document formatting
+                    and online upload assistance.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h3>Exam Forms</h3>
+                <p>
+                    Online examination and admission
+                    form filling assistance.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">🏦</div>
+                <h3>Online Applications</h3>
+                <p>
+                    Assistance with various authorized online
+                    applications and services.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Computer Services</h3>
+                <p>
+                    Typing, document editing, email,
+                    online applications and more.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Other Online Services</h3>
+                <p>
+                    Contact us for other available digital
+                    and online services.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div>
+
+                <h2>Your Local Digital Service Center</h2>
+
+                <p>
+                    Digital Seva Cyber Cafe provides convenient
+                    assistance for online applications, government
+                    services, job forms and everyday digital needs.
+                </p>
+
+                <p>
+                    Visit our center with the required documents
+                    and we will help you complete the relevant
+                    online process.
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+                        ✅ Fast Service
+                    </div>
+
+                    <div class="feature">
+                        ✅ Affordable Charges
+                    </div>
+
+                    <div class="feature">
+                        ✅ Document Assistance
+                    </div>
+
+                    <div class="feature">
+                        ✅ Friendly Support
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>Why Visit Us?</h3>
+
+                <p>
+                    ✔ Multiple online services available
+                </p>
+
+                <p>
+                    ✔ Job application assistance
+                </p>
+
+                <p>
+                    ✔ Government service application support
+                </p>
+
+                <p>
+                    ✔ Printing and scanning
+                </p>
+
+                <p>
+                    ✔ Online form filling
+                </p>
+
+                <p>
+                    ✔ Digital document support
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTICE ================= -->
+
+<section class="notice">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2 style="color:white;">Important Information</h2>
+        </div>
+
+        <div class="notice-box">
+
+            <h3>Before Applying</h3>
+
+            <ul>
+                <li>
+                    Please bring the original documents required
+                    for the particular service.
+                </li>
+
+                <li>
+                    Application approval is subject to the rules
+                    and verification of the concerned government
+                    department.
+                </li>
+
+                <li>
+                    We provide online application assistance;
+                    we do not guarantee approval of any application.
+                </li>
+
+                <li>
+                    Service charges may vary depending on the
+                    application and work involved.
+                </li>
+
+                <li>
+                    Always verify important information before
+                    submitting an application.
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                Have a question? Send us an enquiry.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <h3>R Cyber Cafe</h3>
+
+                <div class="contact-item">
+                    📍 <strong>Address:</strong><br>
+                    Your Shop Address Here,<br>
+                    Purba Bishnupur / Chakdaha,<br>
+                    West Bengal, India
+                </div>
+
+                <div class="contact-item">
+                    📞 <strong>Phone:</strong>
+                    +91 9242598324
+                </div>
+
+                <div class="contact-item">
+                    📧 <strong>Email:</strong>
+                    ranitpaul2008@email.com
+                </div>
+
+                <div class="contact-item">
+                    🕐 <strong>Opening Hours:</strong><br>
+                    Monday - Sunday: 5:00 PM - 10:00 PM
+                </div>
+
+                <a
+                    class="btn btn-primary"
+                    href="https://wa.me/919476310346"
+                    target="_blank"
+                >
+                    💬 WhatsApp Us
+                </a>
+
+            </div>
+
+
+            <div class="contact-card contact-form">
+
+                <h3>Send an Enquiry</h3>
+
+                <form onsubmit="sendEnquiry(event)">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Ranit Paul"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="9242598324"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="service"
+                        placeholder="Which service do you need?"
+                        required
+                    >
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message..."
+                    ></textarea>
+
+                    <button type="submit">
+                        Send Enquiry on WhatsApp
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Digital Seva Cyber Cafe. All Rights Reserved.
+    </p>
+
+    <p>
+        Online Services • Job Forms • Government Services • Printing
+    </p>
+
+</footer>
+
+
+<!-- ================= WHATSAPP BUTTON ================= -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/919476310346"
+    target="_blank"
+    title="Chat on WhatsApp"
+>
+    💬
+</a>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /* Mobile Menu */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navMenu")
+            .classList
+            .toggle("active");
+
+    }
+
+
+    /* Service Search */
+
+    function searchServices() {
+
+        const input =
+            document
+                .getElementById("serviceSearch")
+                .value
+                .toLowerCase();
+
+        const cards =
+            document
+                .querySelectorAll(".service-card");
+
+        cards.forEach(function(card) {
+
+            const text =
+                card.innerText.toLowerCase();
+
+            if (text.includes(input)) {
+
+                card.style.display = "";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+
+    /* WhatsApp Enquiry */
+
+    function sendEnquiry(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        const phone =
+            document.getElementById("phone").value;
+
+        const service =
+            document.getElementById("service").value;
+
+        const message =
+            document.getElementById("message").value;
+
+        const whatsappNumber =
+            "91XXXXXXXXXX";
+
+        const text =
+            "Hello Digital Seva Cyber Cafe,%0A%0A" +
+            "Name: " + encodeURIComponent(name) +
+            "%0AMobile: " + encodeURIComponent(phone) +
+            "%0AService: " + encodeURIComponent(service) +
+            "%0AMessage: " + encodeURIComponent(message);
+
+        window.open(
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            text,
+            "_blank"
+        );
+
+    }
+
+</script>
+
+</body>
+</html>
+```
